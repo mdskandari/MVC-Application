@@ -25,3 +25,10 @@ Homestead.json
 # phpStorm workspace files
 .idea
 .idea/
+
+# ignore vendored files
+vendor/
+vendor
+
+# ignore composer generated files
+composer.lock
