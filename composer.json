@@ -17,11 +17,12 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "philo/laravel-blade": "3.*"
+        "philo/laravel-blade": "3.*",
+        "illuminate/database": "*"
     },
     "config": {
         "allow-plugins": {
-            "kylekatarnls/update-helper": false
+            "kylekatarnls/update-helper": true
         }
     }
 }
