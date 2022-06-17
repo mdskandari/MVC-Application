@@ -14,8 +14,10 @@ $capsule->addConnection([
     'username' => 'root',
     'password' => '123456789',
     'charset' => 'utf8',
-    'collection' => 'utf8_general_ci'
+    'collation' => 'utf8_general_ci'
 ]);
 
 
+
+// Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
 $capsule->bootEloquent();
