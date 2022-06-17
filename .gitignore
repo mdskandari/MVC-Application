@@ -36,3 +36,7 @@ composer.lock
 #ignore log files
 storage/logs
 storage/logs/
+
+# ignore view template cached files
+storage/views
+storage/views/

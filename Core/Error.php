@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use \Core\View;
+
 class Error
 {
     public static function errorHandler($level, $message, $file, $line)
@@ -29,15 +31,14 @@ class Error
         } else {
             $log = dirname(__DIR__) . '/storage/logs/' . date('Y-m-d') . '.txt';
             ini_set('error_log', $log);
-            $message = "<h1>Fatal error</h1> \n";
-            $message .= "<p>Uncaught exception: '" . get_class($exception) . "'</p> \n";
-            $message .= "<p>Message: '" . $exception->getMessage() . "'</p> \n";
-            $message .= "<p>Stack trace:<pre>" . $exception->getTraceAsString() . "</pre></p> \n";
-            $message .= "<p>Throw in '" . $exception->getFile() . "' on line " . $exception->getLine() . "</p> \n";
+
+            $message = "Uncaught exception: '" . get_class($exception) . "'\n";
+            $message .= "Message: '" . $exception->getMessage() . "'\n";
+            $message .= "Stack trace:" . $exception->getTraceAsString() . "\n";
+            $message .= "Throw in '" . $exception->getFile() . "' on line " . $exception->getLine() . "\n";
 
             error_log($message);
-
-            //view
+            echo view::renderTemplate("errors.{$code}");
         }
     }
 }

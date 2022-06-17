@@ -62,12 +62,17 @@ class Router
     {
         $url = $this->removeQueryString($url);
         if ($this->match($url)) {
+
             $controller = $this->params['controller'];
             $controller = $this->getNamespace() . $controller;
+
             if (class_exists($controller)) {
+
                 $controller = new $controller();
                 $method = $this->params['method'];
+
                 if (is_callable([$controller, $method])) {
+                    $this->params['params'] = $this->params['params'] ?? [];
                     echo call_user_func_array([$controller, $method], $this->params['params']);
                 } else {
                     throw new \Exception('Method ' . $method . ' not found in controller ' . $controller);
