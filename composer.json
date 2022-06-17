@@ -1,0 +1,28 @@
+{
+    "name": "mvc-aplication/mvc-application",
+    "description": "A PHP Application With MVC core",
+    "type": "project",
+    "license": "GNU",
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/",
+            "Core\\": "Core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mohammad Eskandari",
+            "email": "mdskandari@outlook.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true
+        }
+    },
+    "require": {
+        "illuminate/database": "^9.17",
+        "eftec/bladeone": "dev-master"
+    }
+}
