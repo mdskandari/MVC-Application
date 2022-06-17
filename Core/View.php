@@ -2,7 +2,8 @@
 
 namespace Core;
 
-use Philo\Blade\Blade;
+//use Philo\Blade\Blade;
+use eftec\bladeone\BladeOne;
 
 class View
 {
@@ -24,8 +25,15 @@ class View
         $views = realpath(__DIR__ . '/../App/Views');
         $cache = realpath(__DIR__ . '/../storage/views');
 
-        $blade = new Blade($views, $cache);
+//        $views = __DIR__ . '/views';
+//        $cache = __DIR__ . '/cache';
 
-        return $blade->view()->make($template, $args)->render();
+//        $blade = new Blade($views, $cache);
+        $blade = new BladeOne($views,$cache,BladeOne::MODE_DEBUG); // MODE_DEBUG allows to pinpoint troubles.
+
+//        return $blade->view()->make($template, $args)->render();
+        return $blade->run($template,$args); // it calls /views/hello.blade.php
+
+
     }
 }
