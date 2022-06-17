@@ -23,7 +23,7 @@ class Error
         http_response_code($code);
 
         if (true) {
-            echo "<h1>Fatal error</h1>";
+            echo "<h1>".get_class($exception)."</h1>";
             echo "<p>Uncaught exception: '" . get_class($exception) . "'</p>";
             echo "<p>Message: '" . $exception->getMessage() . "'</p>";
             echo "<p>Stack trace:<pre>" . $exception->getTraceAsString() . "</pre></p>";
