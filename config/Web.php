@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace config;
 
 $router = new \Core\Router();
 
