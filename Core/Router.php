@@ -1,7 +1,7 @@
 <?php namespace Core;
 
 
-use mysql_xdevapi\Exception;
+use \Exception;
 
 class Router
 {
@@ -66,9 +66,7 @@ class Router
             $controller = $this->getNamespace() . $controller;
             if (class_exists($controller)) {
                 $controller = new $controller();
-
                 $method = $this->params['method'];
-
                 if (is_callable([$controller, $method])) {
                     echo call_user_func_array([$controller, $method], $this->params['params']);
                 } else {
@@ -78,7 +76,7 @@ class Router
                 throw new \Exception("Controller Class {$controller} not found");
             }
         } else {
-            throw new \Exception('No route found for this URL',404);
+            throw new \Exception('No route found for this URL', 404);
         }
     }
 
@@ -99,8 +97,8 @@ class Router
                 $url = $parts[0];
             else
                 $url = '';
-
             return $url;
         }
+        return $url;
     }
 }
