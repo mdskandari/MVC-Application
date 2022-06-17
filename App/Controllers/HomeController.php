@@ -11,11 +11,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-
-        $article= new Article();
-//        $users = $user->selectAll(1);
-        var_dump($article->selectAll());die;
-
-//        return View::renderTemplate('index');
+        return View::renderTemplate('index');
     }
 }
