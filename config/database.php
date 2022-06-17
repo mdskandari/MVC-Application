@@ -7,14 +7,14 @@ use \Illuminate\Database\Capsule\Manager as Capsule;
 $capsule = new Capsule();
 
 $capsule->addConnection([
-    'driver' => $_ENV['DB_CONNECTION'],
-    'host' => $_ENV['DB_HOST'],
-    'port' => $_ENV['DB_PORT'],
-    'database' => $_ENV['DB_DATABASE'],
-    'username' => $_ENV['DB_USERNAME'],
-    'password' => $_ENV['DB_PASSWORD'],
-    'charset' => $_ENV['DB_CHARSET'],
-    'collation' => $_ENV['DB_COLLATION']
+    'driver' => env('DB_CONNECTION'),
+    'host' => env('DB_HOST'),
+    'port' => env('DB_PORT'),
+    'database' => env('DB_DATABASE'),
+    'username' => env('DB_USERNAME'),
+    'password' => env('DB_PASSWORD'),
+    'charset' => env('DB_CHARSET'),
+    'collation' => env('DB_COLLATION')
 ]);
 
 
