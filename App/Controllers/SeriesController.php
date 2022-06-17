@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Controllers;
+use \Core\Controller;
 
-class SeriesController
+class SeriesController extends Controller
 {
     public function index()
     {
